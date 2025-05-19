@@ -81,9 +81,13 @@ function addStudentToTable(student) {
         <td>${student.grade.toFixed(1)}</td>
         <td>${student.date}</td>
         <td><button class="delete">Eliminar</button></td>
+        <td><button class="edit">Editar</button></td>
         `;
     row.querySelector(".delete").addEventListener("click",function(){
         deleteEstudiante(student,row);
+    });
+    row.querySelector(".edit").addEventListener("click",function(){
+        editEstudiante(student,row);
     });
     tableBody.appendChild(row);
 }
@@ -94,6 +98,16 @@ function deleteEstudiante(student,row){
     if(index > -1){
         students.splice(index,1);
         row.remove();
+        calcularPromedio();
+    }
+}
+
+function editEstudiante(student,row){
+
+    const index=students.indexOf(student);
+    if(index > -1){
+        students.replace(index,1);
+        row.replace();
         calcularPromedio();
     }
 }
