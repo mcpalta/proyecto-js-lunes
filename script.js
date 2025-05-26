@@ -3,6 +3,9 @@ let nextId = 1;
 
 const tableBody = document.querySelector("#studentsTable tbody");
 const averageDiv = document.getElementById("average");
+const totalStudentsDiv = document.getElementById("totalStudents");
+const studentsApprovedDiv = document.getElementById("studentsApproved");
+const studentsDisApprovedDiv = document.getElementById("studentsDisApproved");
 
 let editIndex = null;
 let editingRow = null;
@@ -105,6 +108,10 @@ document.getElementById("studentForm").addEventListener("submit", function (e) {
     }
 
     calcularPromedio();
+    totalEstudiantes();
+    cantidadAprobados();
+    cantidadDesAprobados();
+
     this.reset();
 });
 
@@ -149,6 +156,9 @@ function deleteEstudiante(id) {
     }
 
     calcularPromedio();
+    totalEstudiantes();
+    cantidadAprobados();
+    cantidadDesAprobados();
 }
 
 function editEstudiante(id) {
@@ -175,3 +185,22 @@ function calcularPromedio() {
     const average = total / students.length;
     averageDiv.textContent = `Promedio General del Curso: ${average.toFixed(2)}`;
 }
+
+function totalEstudiantes() {
+    totalStudentsDiv.textContent = `Total de Estudiantes: ${students.length}`;
+}
+
+function cantidadAprobados(){
+    const aprobados = students.filter(s => s.grade >= 4.0).length;
+    studentsApprovedDiv.textContent = `Cantidad de Estudiantes Aprobados: ${aprobados}`;
+
+}
+
+function cantidadDesAprobados(){
+    const desaprobados = students.filter(s => s.grade < 4.0).length;
+    studentsDisApprovedDiv.textContent = `Cantidad de Estudiantes Desaprobados: ${desaprobados}`;
+
+}
+// Inicializar los contadores al cargar
+calcularPromedio();
+totalEstudiantes();

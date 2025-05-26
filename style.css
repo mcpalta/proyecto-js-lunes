@@ -33,6 +33,41 @@ h1, h2 {
     text-align: center;
 }
 
+#totalStudents {
+    background-color: #e0f7fa;
+    border: 2px solid #00bcd4;
+    color: #0074D9;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#studentsApproved {
+    background-color: #e0f7fa;
+    border: 2px solid #00bcd4;
+    color: #0074D9;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#studentsDisApproved {
+    background-color: #e0f7fa;
+    border: 2px solid #00bcd4;
+    color: #0074D9;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
 /* Estilos del formulario */
 form {
     display: flex;
